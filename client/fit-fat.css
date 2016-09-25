@@ -52,14 +52,31 @@ body{
 }
 .fat-dude{
     display: flex;
+    align-items: flex-end;
     background: whitesmoke;
+    min-height: 500px;
 }
-.fat-dude > .img{
-    background-image: url("Untitled-20013.png");
+.fat-dude > img{
+    animation: resize;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
     width: 230px;
     height: 474px;
 }
 @font-face {
     font-family: empty-font;
     src: url("THIS_FONT_IS_EMPTY1.ttf")
+}
+@keyframes resize {
+    0%{height: 450px;width: 241px;}
+    10%{height: 480px;width: 218px;}
+    20%{height: 450px;width: 241px;}
+    30%{height: 480px;width: 218px;}
+    40%{height: 450px;width: 241px;}
+    50%{height: 480px;width: 218px;}
+    60%{height: 450px;width: 241px;}
+    70%{height: 480px;width: 218px;}
+    80%{height: 450px;width: 241px;}
+    90%{height: 480px;width: 218px;}
+    100%{height: 450px;width: 241px;}
 }
