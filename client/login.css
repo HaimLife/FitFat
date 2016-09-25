@@ -2,10 +2,20 @@ form{
     border: 1px solid gray;
     margin:50px;
     padding: 20px;
+    min-width:60%;
 }
 label{
     width: 100%;
+    display: flex;
+    justify-content: space-between;
 }
 input{
     width: 100px;
+}
+select{
+    min-width:100px;
+    height: 50px;
+    font-size: 40px;
+    background: lightgrey;
+    border-bottom: 1px solid black;
 }
