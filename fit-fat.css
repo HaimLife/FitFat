@@ -1,0 +1,65 @@
+body{
+    margin: 0;
+    background: whitesmoke;
+}
+.fit-fat-app{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-content: center;
+    font-size: 2em;
+    width: 100%;
+    height: 100%;
+}
+.title{
+    font-size: 2em;
+    font-style: oblique;
+    font-family: empty-font, Aharoni, sans-serif;
+    padding: 50px;
+}
+.options{
+    width: 100%;
+    display: flex;
+    flex-flow:row;
+    justify-content: space-around;
+}
+.option{
+    border-radius: 10%;
+    cursor: pointer;
+}
+.option:hover:not(:active){
+    font-size: 1.2em;
+}
+.option.sport{
+    box-shadow: 0 0 3px 3px lightgreen;
+}
+.option.food{
+    box-shadow: 0 0 3px 3px orangered;
+}
+.option.food{
+    background: red;
+}
+.option.sport{
+    background: lawngreen;
+}
+.calories-data{
+    box-shadow: 0 0 5px 4px gray;
+    border-radius:10px;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    width: 90%;
+}
+.fat-dude{
+    display: flex;
+    background: whitesmoke;
+}
+.fat-dude > .img{
+    background-image: url("Untitled-20013.png");
+    width: 230px;
+    height: 474px;
+}
+@font-face {
+    font-family: empty-font;
+    src: url("THIS_FONT_IS_EMPTY1.ttf")
+}
