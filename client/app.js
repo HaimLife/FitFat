@@ -5,6 +5,7 @@ app.isAlive = true;
 app.isSick = false;
 app.weight = 0;
 app.fatPercentage = 0;
+app.daysInDiet = 0;
 
 $(function(){
     var $select = $("#weight");
