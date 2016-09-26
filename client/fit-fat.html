@@ -11,6 +11,7 @@
     <script src="sliderTry.js" defer></script>
     <script src="app.js" defer></script>
     <script src="FoodToCalories/FoodToCalories.js" defer></script>
+    <script src="ActivityToCalories/ActivityToCalories.js" defer></script>
     <title>FitFat</title>
 </head>
 <body>
@@ -45,11 +46,21 @@
                     <h4 class="modal-title" id="sportModalLabel">הוסף פעילות גופנית</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <form>
+                        <div class="form-group">
+                            <label for="activity-list">Choose Activity</label>
+                            <select id="activity-list" class="form-control">
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="activity-time">Time In Minutes</label>
+                            <input type="number" id="activity-time" min="0" value="0" step="1" class="form-control">
+                        </div>
+                    </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
-                    <button type="button" class="btn btn-primary">הוסף פעילות גופנית</button>
+                    <button type="submit" id="submit-activity-modal" class="btn btn-primary">הוסף פעילות גופנית</button>
                 </div>
             </div>
         </div>
