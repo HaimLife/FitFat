@@ -27,14 +27,22 @@
                     </button>
                     <h4 class="modal-title" id="foodModalLabel">הוסף אוכל</h4>
                 </div>
-                <div class="modal-body">
-                    <input class="foodName" placeholder="Food Name"/>
-                    <input class="foodQuantity" placeholder="Food Quantity"/>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
-                    <button type="button" class="addFood btn btn-primary">הוסף אוכל</button>
-                </div>
+                <form id="food-form">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="food-name">Choose Food</label>
+                            <input id="food-name" class="form-control foodName" placeholder="Food Name" required/>
+                        </div>
+                        <div class="form-group">
+                            <label for="food-qauntity">Choose Quantity</label>
+                            <input type="number" min="1" value="1" id="food-qauntity" class="form-control foodQuantity" placeholder="Food Quantity" required/>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
+                        <button type="submit" class="addFood btn btn-primary">הוסף אוכל</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
