@@ -1,21 +1,33 @@
-$(function(){
-    var $select = $("#weight");
-    for (i=1;i<=250;i++){
-        $select.append($('<option></option>').val(i).html(i + " KG"));
-    }
-});
-$(function(){
-    var $select = $("#fat");
-    for (i=1;i<=99;i++){
-        $select.append($('<option></option>').val(i).html(i + "% Fat"));
-    }
-});
-$(function(){
-    var $select = $("#height");
-    for (i=50;i<=250;i++){
-        $select.append($('<option></option>').val(i).html(i + " CM"));
-    }
-});
+(function () {
+    $(function(){
+        var $select = $("#weight");
+        for (i=1;i<=250;i++){
+            $select.append($('<option></option>').val(i).html(i + " KG"));
+        }
+    });
+    $(function(){
+        var $select = $("#fat");
+        for (i=1;i<=99;i++){
+            $select.append($('<option></option>').val(i).html(i + "% Fat"));
+        }
+    });
+    $(function(){
+        var $select = $("#height");
+        for (i=50;i<=250;i++){
+            $select.append($('<option></option>').val(i).html(i + " CM"));
+        }
+    });
+    $("#submitMainForm").click(function () {
+        app.weight = $("#weight").val();
+        app.fatPercentage = $("#fat").val();
+        app.sex = $("input[name=optionsRadios]:checked").val();
+        app.height = $("#height").val();
+        $(".set-up").addClass("hide");
+        $(".display")[0].classList.remove("hide");
+        $(".well")[0].classList.remove("hide");
+        updateWeight(app.weight, app.fatPercentage, true, false);
+    });
+}());
 function updateWeight(kg, fat, isAlive, isSick) {
     var fatDudeImgElement = $("#fatDudeImg");
     if(!isAlive){

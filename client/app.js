@@ -6,4 +6,5 @@ app.isSick = false;
 app.weight = 0;
 app.fatPercentage = 0;
 app.sex = 'male';
+app.height = 160;
 app.daysInDiet = 0;
