@@ -8,3 +8,7 @@ app.fatPercentage = 0;
 app.sex = 'male';
 app.height = 160;
 app.daysInDiet = 0;
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip()
+});
