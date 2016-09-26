@@ -5,4 +5,5 @@ app.isAlive = true;
 app.isSick = false;
 app.weight = 0;
 app.fatPercentage = 0;
+app.sex = 'male';
 app.daysInDiet = 0;
