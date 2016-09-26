@@ -12,11 +12,19 @@ $(document).ready(function() {
         var foodName = $(".foodName").val();
         var foodQuantity = $(".foodQuantity").val();
         $.getJSON("http://localhost:1044/FoodToCalories.svc/GetCalories?food=" + foodName, function(data) {
-            $(".foodList").append("<div class='list-group-item'> <span class='glyphicon glyphicon-remove btn'></span>" + foodName + " - " + foodQuantity + "</div>");
+            var foodUnit = data.find(function(entry){
+                return entry.Key == "unit";
+            }).Value
+            $(".foodList").append("<div class='list-group-item'> <span class='glyphicon glyphicon-remove btn removeFood'></span>" + foodName + " <span class='foodUnit'> " + foodQuantity + " " + foodUnit + "</span></div>");
+            $(".removeFood").click(function(event) {
+                var object = event.target.parentElement.remove();
+            });
             app.intakeCalories += (data.find(function(entry){
                 return entry.Key == "calories";
             }).Value * foodQuantity);
             foodList.append(data);
         });
     });
+
+
 });
