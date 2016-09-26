@@ -120,9 +120,9 @@ body {
 }
 
 #ex1Slider .slider-selection {
-    background: #149bdf;
-}
+     background: #149bdf;
+ }
 
-#ex1Slider .slider-track-high {
-    background: #BABABA;
+#ex1Slider .slider-tick {
+    background: red;
 }
