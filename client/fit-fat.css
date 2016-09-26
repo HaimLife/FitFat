@@ -1,7 +1,8 @@
-body{
+body {
     margin: 0;
 }
-.fit-fat-app{
+
+.fit-fat-app {
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
@@ -10,36 +11,41 @@ body{
     width: 100%;
     height: 100%;
 }
-.fit-fat-app > .title{
+
+.fit-fat-app > .title {
     padding: 50px;
-    width:100%;
+    width: 100%;
     display: flex;
     justify-content: center;
 
 }
-.fit-fat-app > .title > span{
+
+.fit-fat-app > .title > span {
     font-size: 2em;
     font-style: oblique;
     font-family: empty-font, Aharoni, sans-serif;
 }
-.content{
+
+.content {
     display: flex;
-    flex-flow:row;
+    flex-flow: row;
     align-content: space-between;
     justify-content: space-around;
     width: 100%;
 }
 
-.fat-dude > .display{
+.fat-dude > .display {
     display: flex;
     align-items: flex-end;
     min-height: 600px;
     margin-left: -231px;
 }
-.hide{
+
+.hide {
     display: none;
 }
-.fat-dude > .display > img{
+
+.fat-dude > .display > img {
     position: relative;
     bottom: 184px;
     left: 350px;
@@ -47,30 +53,41 @@ body{
     animation-duration: 2s;
     animation-iteration-count: infinite;
 }
-.weight > .data{
+
+.weight > .data {
     display: flex;
     justify-content: space-between;
     position: relative;
     bottom: 88px;
     left: 140px;
-    width:200px;
+    width: 200px;
 }
-.kg,.fat{
+
+.kg, .fat {
     font-family: digital-font, Aharoni, sans-serif;
 
 }
-.weight .kg:after{
+
+.weight .kg:after {
     content: "KG";
 }
-.weight .fat:after{
+
+.weight .fat:after {
     content: "% FAT";
 }
 
-.list-group{
-    width: 150px;
+.list-group-item:first-child {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.list-group {
+    width: 200px;
     text-overflow: ellipsis;
 }
-#lifeSlider{
+
+#lifeSlider {
     width: 100%;
 }
 
@@ -78,20 +95,32 @@ body{
     font-family: empty-font;
     src: url("resources/THIS_FONT_IS_EMPTY1.ttf")
 }
+
 @font-face {
     font-family: digital-font;
     src: url("resources/alarm.ttf")
 }
+
 @keyframes resize {
     /*230 474*/
-    0%{height: 465px;width: 235px;}
-    50%{height: 474px;width: 230px;}
-    100%{height: 465px;width: 235px;}
+    0% {
+        height: 465px;
+        width: 235px;
+    }
+    50% {
+        height: 474px;
+        width: 230px;
+    }
+    100% {
+        height: 465px;
+        width: 235px;
+    }
 }
 
 #ex1Slider .slider-selection {
     background: #149bdf;
 }
+
 #ex1Slider .slider-track-high {
     background: #BABABA;
 }
