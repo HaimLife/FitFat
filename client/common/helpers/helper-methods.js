@@ -7,3 +7,6 @@ function htmlToElement(html) {
     template.innerHTML = html;
     return template.content.firstChild;
 }
+function getBmr(kg, fat) {
+    return kg * (1 -(fat / 100)) * 33.5;
+}
