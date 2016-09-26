@@ -25,6 +25,7 @@
         $(".set-up").addClass("hide");
         $(".display")[0].classList.remove("hide");
         $(".well")[0].classList.remove("hide");
+        $(".current-data")[0].classList.remove("hide");
         updateWeight(app.weight, app.fatPercentage, true, false);
     });
 }());
