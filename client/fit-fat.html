@@ -2,31 +2,83 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <script src="jquery-3.1.1.min.js"></script>
     <link rel="stylesheet" href="fit-fat.css">
+    <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
     <title>FitFat</title>
 </head>
 <body>
-<div class="fit-fat-app">
-    <div class="title">Fit-Fat</div>
-    <div class="options">
-        <div class="option food" >Add Food</div>
-        <div class="option sport" >Add Activity</div>
-    </div>
-    <div class="fat-dude">
-        <span class="img">
-
-        </span>
-        <div class="weight">
-            <span class="img">
-            </span>
-            <span class="data">
-            </span>
+<div>
+    <div class="modal fade" id="foodModal" tabindex="-1" role="dialog" aria-labelledby="foodModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="foodModalLabel">הוסף אוכל</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
+                    <button type="button" class="btn btn-primary">הוסף אוכל</button>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="calories-data">
-        <div class="intake">calories intake: <span class="data"></span></div>
-        <div class="outtake">calories outtake: <span class="data"></span></div>
-        <div class="total">calories total: <span class="data"></span></div>
+    <div class="modal fade" id="sportModal" tabindex="-1" role="dialog" aria-labelledby="sportModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="sportModalLabel">הוסף פעילות גופנית</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
+                    <button type="button" class="btn btn-primary">הוסף פעילות גופנית</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="fit-fat-app">
+    <div class="title"><span>Fit-Fat</span></div>
+    <div class="content">
+        <div class="list-group food">
+            <div class="list-group-item active">תפריט יומי</div>
+            <div class="list-group-item">אחד</div>
+            <div class="list-group-item">שניים</div>
+            <div class="list-group-item">שלוש</div>
+            <div class="list-group-item">ארבע</div>
+            <div class="list-group-item">חמש</div>
+            <div class="list-group-item btn" data-toggle="modal" data-target="#foodModal"><span class="glyphicon glyphicon-plus"></span> </div>
+        </div>
+        <div class="fat-dude">
+            <img src="resources/Untitled-20013.png">
+            <div class="weight">
+            <span class="img">
+            </span>
+                <span class="data">
+            </span>
+            </div>
+        </div>
+        <div class="list-group food">
+            <div class="list-group-item active">פעילות גופנית</div>
+            <div class="list-group-item">אחד</div>
+            <div class="list-group-item">שניים</div>
+            <div class="list-group-item">שלוש</div>
+            <div class="list-group-item">ארבע</div>
+            <div class="list-group-item">חמש</div>
+            <div class="list-group-item btn" data-toggle="modal" data-target="#sportModal"><span class="glyphicon glyphicon-plus"></span> </div>
+        </div>
     </div>
 </div>
 </body>

@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background: whitesmoke;
+    direction: rtl;
 }
 .fit-fat-app{
     display: flex;
@@ -11,55 +11,56 @@ body{
     width: 100%;
     height: 100%;
 }
-.title{
+.fit-fat-app > .title{
+    padding: 50px;
+    width:100%;
+    display: flex;
+    justify-content: center;
+
+}
+.fit-fat-app > .title > span{
     font-size: 2em;
     font-style: oblique;
     font-family: empty-font, Aharoni, sans-serif;
-    padding: 50px;
 }
-.options{
-    width: 100%;
+.content{
     display: flex;
     flex-flow:row;
+    align-content: space-between;
     justify-content: space-around;
+    width: 100%;
 }
-.option{
-    border-radius: 10%;
-    cursor: pointer;
-}
-.option:hover:not(:active){
-    font-size: 1.2em;
-}
-.option.sport{
-    box-shadow: 0 0 3px 3px lightgreen;
-}
-.option.food{
-    box-shadow: 0 0 3px 3px orangered;
-}
-.option.food{
-    background: red;
-}
-.option.sport{
-    background: lawngreen;
-}
-.calories-data{
-    box-shadow: 0 0 5px 4px gray;
-    border-radius:10px;
-    display: flex;
-    flex-flow: row;
-    justify-content: space-around;
-    width: 90%;
-}
+
 .fat-dude{
     display: flex;
-    background: whitesmoke;
+    align-items: flex-end;
+    min-height: 500px;
+    min-width: 250px;
 }
-.fat-dude > .img{
-    background-image: url("Untitled-20013.png");
-    width: 230px;
-    height: 474px;
+.fat-dude > img{
+    animation: resize;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
 }
+.list-group{
+    width: 150px;
+    text-overflow: ellipsis;
+}
+
 @font-face {
     font-family: empty-font;
-    src: url("THIS_FONT_IS_EMPTY1.ttf")
+    src: url("resources/THIS_FONT_IS_EMPTY1.ttf")
+}
+@keyframes resize {
+    0%{height: 450px;width: 241px;}
+    10%{height: 480px;width: 218px;}
+    20%{height: 450px;width: 241px;}
+    30%{height: 480px;width: 218px;}
+    40%{height: 450px;width: 241px;}
+    50%{height: 480px;width: 218px;}
+    60%{height: 450px;width: 241px;}
+    70%{height: 480px;width: 218px;}
+    80%{height: 450px;width: 241px;}
+    90%{height: 480px;width: 218px;}
+    100%{height: 450px;width: 241px;}
 }
