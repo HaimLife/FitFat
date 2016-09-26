@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="fit-fat.css">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="FoodToCalories/FoodToCalories.js"></script>
     <title>FitFat</title>
 </head>
 <body>
@@ -20,11 +21,12 @@
                     <h4 class="modal-title" id="foodModalLabel">הוסף אוכל</h4>
                 </div>
                 <div class="modal-body">
-                    ...
+                    <input class="foodName" placeholder="Food Name"/>
+                    <input class="foodQuantity" placeholder="Food Quantity"/>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">סגור</button>
-                    <button type="button" class="btn btn-primary">הוסף אוכל</button>
+                    <button type="button" class="addFood btn btn-primary">הוסף אוכל</button>
                 </div>
             </div>
         </div>
@@ -52,14 +54,14 @@
 <div class="fit-fat-app">
     <div class="title"><span>Fit-Fat</span></div>
     <div class="content">
-        <div class="list-group food">
+        <div class="list-group food foodList">
             <div class="list-group-item active">תפריט יומי</div>
             <div class="list-group-item">אחד</div>
             <div class="list-group-item">שניים</div>
             <div class="list-group-item">שלוש</div>
             <div class="list-group-item">ארבע</div>
             <div class="list-group-item">חמש</div>
-            <div class="list-group-item btn" data-toggle="modal" data-target="#foodModal"><span class="glyphicon glyphicon-plus"></span> </div>
+            <div class="openAddFood list-group-item btn" data-toggle="modal" data-target="#foodModal"><span class="glyphicon glyphicon-plus"></span> </div>
         </div>
         <div class="fat-dude">
             <img src="resources/Untitled-20013.png">
