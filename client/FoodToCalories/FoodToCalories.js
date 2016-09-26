@@ -21,7 +21,7 @@ $(document).ready(function() {
             var foodId = "food" + foodIndex;
 
             var informationButton="<button type='button' class='btn btn-danger pop' data-container='body' data-toggle='popover' data-placement='right' data-original-title='' title='"+GetValue(data,"name")+"'> i </button>"
-            var foodText="<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>" + foodName + " <span class='foodUnit'>  " + foodQuantity + " " + foodUnit + "</span><span>"+informationButton+"</span></div>";
+            var foodText="<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>  " + foodName + " <span class='foodUnit'>  " + foodQuantity + " " + foodUnit + "</span><span>"+informationButton+"</span></div>";
             $(foodText).insertBefore("#food-calorie-sum");
 
             foodIndex++;

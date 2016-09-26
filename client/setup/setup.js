@@ -25,10 +25,16 @@
         $(".set-up").addClass("hide");
         $(".display")[0].classList.remove("hide");
         $(".well")[0].classList.remove("hide");
+        $(".current-data")[0].classList.remove("hide");
         updateWeight(app.weight, app.fatPercentage, true, false);
     });
 }());
+
 function updateWeight(kg, fat, isAlive, isSick) {
+    app.currentKg = kg;
+    app.currentFat = fat;
+    app.currentIsAlive = isAlive;
+    app.currentIsSick = isSick;
     var fatDudeImgElement = $("#fatDudeImg");
     if(!isAlive){
         fatDudeImgElement.attr('src', "resources\\skeleton.png");
