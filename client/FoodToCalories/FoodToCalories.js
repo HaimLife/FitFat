@@ -21,63 +21,72 @@ $(document).ready(function() {
             }).Value
             var foodId = "food" + foodIndex;
 
-            $("<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>" + foodName + " <span class='foodUnit'>  " + foodQuantity + " " + foodUnit + "</span></div>")
-                .insertBefore("#food-calorie-sum");
+            var informationButton="<button type='button' class='btn btn-danger pop' data-container='body' data-toggle='popover' data-placement='right' data-original-title='' title='"+GetValue(data,"name")+"'> i </button>"
+            var foodText="<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>  " + foodName + " <span class='foodUnit'>  " + foodQuantity + " " + foodUnit + "</span><span>"+informationButton+"</span></div>";
+            $(foodText).insertBefore("#food-calorie-sum");
 
             foodIndex++;
-            $(".removeFood").click(function(event) {
-                var food = event.target.parentElement;
-                var foodIndex = food.id;
-                var foodToBeRemoved = foodList.find(function (food) {
-                    return food.id == foodIndex;
-                });
-                var data = foodToBeRemoved.data;
-                app.intake.calories -= (data.find(function(entry){
-                    return entry.Key == "calories";
-                }).Value * foodQuantity);
-                app.intake.totalFat -= (data.find(function(entry){
-                    return entry.Key == "fat";
-                }).Value * foodQuantity);
-                app.intake.cholesterol -= (data.find(function(entry){
-                    return entry.Key == "cholesterol";
-                }).Value * foodQuantity);
-                app.intake.sugars -= (data.find(function(entry){
-                    return entry.Key == "sugars";
-                }).Value * foodQuantity);
-                app.intake.protein -= (data.find(function(entry){
-                    return entry.Key == "protein";
-                }).Value * foodQuantity);
-                app.intake.sodium -= (data.find(function(entry){
-                    return entry.Key == "sodium";
-                }).Value * foodQuantity);
-                app.intake.iron -= (data.find(function(entry){
-                    return entry.Key == "iron";
-                }).Value * foodQuantity);
 
-                var foodIndexToBeRemoved = foodList.indexOf(foodToBeRemoved);
-                foodList.splice(foodIndexToBeRemoved, 1);
-                $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
-                food.remove();
+            AddToIntake(data,foodQuantity);
+            $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
+
+            var food = {
+                "id": foodId,
+                "data": data
+            };
+            foodList.push(food);
+
+            AddPopover(data);
+            Remove(foodQuantity);
+
+            $("#foodModal").modal("toggle");
+        }).fail(function() {
+            $(".foodErrorMessage").show().delay(4000).fadeOut();
+        });
+    });
+
+
+
+    function PopOverText(data)
+    {
+        return "<ul class='list-group'>"+
+            "<li class='list-group-item'>Calories: "+GetValue(data,'calories')+"</li>"+
+            "<li class='list-group-item'>Fat: "+GetValue(data,'fat')+"</li>"+
+            "<li class='list-group-item'>Cholesterol: "+GetValue(data,'cholesterol')+"</li>"+
+            "<li class='list-group-item'>Sugars: "+GetValue(data,'sugars')+"</li>"+
+            "<li class='list-group-item'>Protein: "+GetValue(data,'protein')+"</li>"+
+            "<li class='list-group-item'>Sodium: "+GetValue(data,'sodium')+"</li>"+
+            "<li class='list-group-item'>Iron: "+GetValue(data,'iron')+"</li>"+
+            "</ul>";
+    }
+
+    function Remove(foodQuantity) {
+        $(".removeFood").click(function (event) {
+            var food = event.target.parentElement;
+            var foodIndex = food.id;
+            var foodToBeRemoved = foodList.find(function (food) {
+                return food.id == foodIndex;
             });
-            app.intake.calories += (data.find(function(entry){
+            var data = foodToBeRemoved.data;
+            app.intake.calories -= (data.find(function (entry) {
                 return entry.Key == "calories";
             }).Value * foodQuantity);
-            app.intake.totalFat += (data.find(function(entry){
+            app.intake.totalFat -= (data.find(function (entry) {
                 return entry.Key == "fat";
             }).Value * foodQuantity);
-            app.intake.cholesterol += (data.find(function(entry){
+            app.intake.cholesterol -= (data.find(function (entry) {
                 return entry.Key == "cholesterol";
             }).Value * foodQuantity);
-            app.intake.sugars += (data.find(function(entry){
+            app.intake.sugars -= (data.find(function (entry) {
                 return entry.Key == "sugars";
             }).Value * foodQuantity);
-            app.intake.protein += (data.find(function(entry){
+            app.intake.protein -= (data.find(function (entry) {
                 return entry.Key == "protein";
             }).Value * foodQuantity);
-            app.intake.sodium += (data.find(function(entry){
+            app.intake.sodium -= (data.find(function (entry) {
                 return entry.Key == "sodium";
             }).Value * foodQuantity);
-            app.intake.iron += (data.find(function(entry){
+            app.intake.iron -= (data.find(function (entry) {
                 return entry.Key == "iron";
             }).Value * foodQuantity);
 
@@ -87,13 +96,37 @@ $(document).ready(function() {
             };
             foodList.push(food);
             $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
-            $(".addFood").button('reset');
             $("#foodModal").modal("toggle");
-        }).fail(function() {
-            $(".foodErrorMessage").show().delay(4000).fadeOut();
             $(".addFood").button('reset');
+        }).fail(function() {
+            $(".addFood").button('reset');
+            $(".foodErrorMessage").show().delay(4000).fadeOut();
         });
-    });
+    }
 
+    function AddToIntake(data,foodQuantity)
+    {
+        app.intake.calories += (data.find(function(entry){
+            return entry.Key == "calories";
+        }).Value * foodQuantity);
+        app.intake.totalFat += (data.find(function(entry){
+            return entry.Key == "fat";
+        }).Value * foodQuantity);
+        app.intake.cholesterol += (data.find(function(entry){
+            return entry.Key == "cholesterol";
+        }).Value * foodQuantity);
+        app.intake.sugars += (data.find(function(entry){
+            return entry.Key == "sugars";
+        }).Value * foodQuantity);
+        app.intake.protein += (data.find(function(entry){
+            return entry.Key == "protein";
+        }).Value * foodQuantity);
+        app.intake.sodium += (data.find(function(entry){
+            return entry.Key == "sodium";
+        }).Value * foodQuantity);
+        app.intake.iron += (data.find(function(entry){
+            return entry.Key == "iron";
+        }).Value * foodQuantity);
+    }
 
 });
