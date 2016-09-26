@@ -1,5 +1,13 @@
 var app = {};
-app.intakeCalories = 0;
+app.intake = {
+    "calories": 0,
+    "totalFat": 0,
+    "cholesterol": 0,
+    "sugars": 0,
+    "protein": 0,
+    "sodium": 0,
+    "iron": 0
+};
 app.outtakeCalories = 0;
 app.isAlive = true;
 app.isSick = false;
