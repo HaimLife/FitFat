@@ -75,7 +75,10 @@ body {
 .weight .fat:after {
     content: "% FAT";
 }
-
+.foodUnit,.unit{
+    font-size: 0.8em;
+    color: gray;
+}
 .list-group-item:first-child {
     display: flex;
     justify-content: space-around;
@@ -83,7 +86,7 @@ body {
 }
 
 .list-group {
-    width: 200px;
+    min-width: 200px;
     text-overflow: ellipsis;
 }
 
