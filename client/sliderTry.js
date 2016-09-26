@@ -10,5 +10,6 @@ $('#lifeSlider').slider({
 });
 $("#lifeSlider").on("slide", function(slideEvt) {
     app.daysInDiet = slideEvt.value;
+    //app.fatPercentage
     updateWeight();
 });
