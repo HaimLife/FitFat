@@ -36,7 +36,7 @@ body{
     min-height: 600px;
     margin-left: -231px;
 }
-.set-up{
+.hide{
     display: none;
 }
 .fat-dude > .display > img{
@@ -55,6 +55,9 @@ body{
     left: 140px;
     width:200px;
 }
+#weight > option:after{
+    content: " KG";
+}
 .kg,.fat{
     font-family: digital-font, Aharoni, sans-serif;
 
@@ -70,7 +73,9 @@ body{
     width: 150px;
     text-overflow: ellipsis;
 }
-
+#lifeSlider{
+    width: 100%;
+}
 
 @font-face {
     font-family: empty-font;
