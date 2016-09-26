@@ -84,6 +84,7 @@ $(document).ready(function() {
                 "data": data
             };
             foodList.push(food);
+            $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
             $("#foodModal").modal("toggle");
         });
     });

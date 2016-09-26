@@ -23,10 +23,10 @@ function SubmitActivityModal()
 
             $("<div class='list-group-item' calories='"+data+"'> <span class='glyphicon glyphicon-remove btn remove-activity'></span>" + activityType.text() + ": " + activityTime+ "m</div>")
                 .insertBefore("#activity-calorie-sum");
+            app.outtakeCalories+=data;
+            $("#activity-calorie-sum .activity-calories")[0].innerHTML=app.outtakeCalories;
 
             RemoveActivity()
-
-            app.outtakeCalories+=data;
         });
         //close the modal
         $('#sportModal').modal('toggle');
