@@ -20,7 +20,7 @@ $(document).ready(function() {
             }).Value
             var foodId = "food" + foodIndex;
 
-            $("<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn removeFood'></span>" + foodName + " <span class='foodUnit'> " + foodQuantity + " " + foodUnit + "</span></div>")
+            $("<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>" + foodName + " <span class='foodUnit'>  " + foodQuantity + " " + foodUnit + "</span></div>")
                 .insertBefore("#food-calorie-sum");
 
             foodIndex++;
