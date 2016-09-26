@@ -59,13 +59,12 @@ body {
     justify-content: space-between;
     position: relative;
     bottom: 88px;
-    left: 140px;
-    width: 200px;
+    left: 90px;
+    width: 270px;
 }
 
 .kg, .fat {
     font-family: digital-font, Aharoni, sans-serif;
-
 }
 
 .weight .kg:after {
