@@ -84,6 +84,13 @@ body {
     align-items: center;
 }
 
+.popover-content .list-group-item:first-child {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+
 .list-group {
     min-width: 200px;
     text-overflow: ellipsis;
