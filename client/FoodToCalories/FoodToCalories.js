@@ -1,8 +1,6 @@
 /**
  * Created by liorslor on 9/26/2016.
  */
-
-
 $(document).ready(function() {
     var foodList = [];
     var foodIndex = 0;
@@ -42,7 +40,8 @@ $(document).ready(function() {
 
             $("#foodModal").modal("toggle");
         });
-    });
+    }).fail(function() {
+        $(".foodErrorMessage").show().delay(4000).fadeOut();
 });
 
 function PopOverText(data)
@@ -88,38 +87,39 @@ function Remove()
         app.intake.iron -= (data.find(function(entry){
             return entry.Key == "iron";
         }).Value * foodQuantity);
-
-        var foodIndexToBeRemoved = foodList.indexOf(foodToBeRemoved);
-        foodList.splice(foodIndexToBeRemoved, 1);
+        
+                var foodIndexToBeRemoved = foodList.indexOf(foodToBeRemoved);
+                foodList.splice(foodIndexToBeRemoved, 1);
+        $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
         food.remove();
-    });
-}
+            });
+        
 
-function AddToIntake(data,foodQuantity)
-{
-    app.intake.calories += (data.find(function(entry){
-        return entry.Key == "calories";
-    }).Value * foodQuantity);
-    app.intake.totalFat += (data.find(function(entry){
-        return entry.Key == "fat";
-    }).Value * foodQuantity);
-    app.intake.cholesterol += (data.find(function(entry){
-        return entry.Key == "cholesterol";
-    }).Value * foodQuantity);
-    app.intake.sugars += (data.find(function(entry){
-        return entry.Key == "sugars";
-    }).Value * foodQuantity);
-    app.intake.protein += (data.find(function(entry){
-        return entry.Key == "protein";
-    }).Value * foodQuantity);
-    app.intake.sodium += (data.find(function(entry){
-        return entry.Key == "sodium";
-    }).Value * foodQuantity);
-    app.intake.iron += (data.find(function(entry){
-        return entry.Key == "iron";
-    }).Value * foodQuantity);
-}
-
+    function AddToIntake(data,foodQuantity)
+    {
+        app.intake.calories += (data.find(function(entry){
+            return entry.Key == "calories";
+        }).Value * foodQuantity);
+        app.intake.totalFat += (data.find(function(entry){
+            return entry.Key == "fat";
+        }).Value * foodQuantity);
+        app.intake.cholesterol += (data.find(function(entry){
+            return entry.Key == "cholesterol";
+        }).Value * foodQuantity);
+        app.intake.sugars += (data.find(function(entry){
+            return entry.Key == "sugars";
+        }).Value * foodQuantity);
+        app.intake.protein += (data.find(function(entry){
+            return entry.Key == "protein";
+        }).Value * foodQuantity);
+        app.intake.sodium += (data.find(function(entry){
+            return entry.Key == "sodium";
+        }).Value * foodQuantity);
+        app.intake.iron += (data.find(function(entry){
+            return entry.Key == "iron";
+        }).Value * foodQuantity);
+    }
+    
 function GetValue(data,key)
 {
     return data.find(function(entry){

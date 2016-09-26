@@ -39,6 +39,7 @@ function RemoveActivity()
         var element=event.target.parentElement;
         app.outtakeCalories-=element.getAttribute("calories");
         element.remove();
+        $("#activity-calorie-sum .activity-calories")[0].innerHTML=app.outtakeCalories;
     });
 
 }
