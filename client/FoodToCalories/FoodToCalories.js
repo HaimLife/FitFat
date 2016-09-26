@@ -12,6 +12,7 @@ $(document).ready(function() {
 
     $("#food-form").submit(function(e) {
         e.preventDefault();
+        $(".addFood").button('loading');
         var foodName = $(".foodName").val();
         var foodQuantity = $(".foodQuantity").val();
         $.getJSON("http://3e87e769.ngrok.io/FoodToCalories.svc/GetCalories?food=" + foodName, function(data) {
@@ -86,9 +87,11 @@ $(document).ready(function() {
             };
             foodList.push(food);
             $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
+            $(".addFood").button('reset');
             $("#foodModal").modal("toggle");
         }).fail(function() {
             $(".foodErrorMessage").show().delay(4000).fadeOut();
+            $(".addFood").button('reset');
         });
     });
 
