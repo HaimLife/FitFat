@@ -12,7 +12,7 @@ $("#lifeSlider").on("slide", function(slideEvt) {
     app.daysInDiet = slideEvt.value;
     //app.intakeCalories
     //app.outtakeCalories\
-    app.
+
     //app.fatPercentage
-    updateWeight();
+    updateWeight(slideEvt.value, slideEvt.value, slideEvt.value < 50, 1);
 });
