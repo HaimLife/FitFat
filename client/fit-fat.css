@@ -126,3 +126,6 @@ body {
 #ex1Slider .slider-tick {
     background: red;
 }
+#ex1Slider .slider-tick-label {
+    color: red;
+}
