@@ -28,7 +28,12 @@
         updateWeight(app.weight, app.fatPercentage, true, false);
     });
 }());
+
 function updateWeight(kg, fat, isAlive, isSick) {
+    app.currentKg = kg;
+    app.currentFat = fat;
+    app.currentIsAlive = isAlive;
+    app.currentIsSick = isSick;
     var fatDudeImgElement = $("#fatDudeImg");
     if(!isAlive){
         fatDudeImgElement.attr('src', "resources\\skeleton.png");
