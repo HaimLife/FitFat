@@ -20,10 +20,13 @@ function SubmitActivityModal()
         var activityTime=$("#activity-time").val();
 
         $.getJSON(mainUrl+"GetBurnedCalories?id="+activityType.val()+"&trainingMinutes="+activityTime, function(data) {
-            $("#choosed-activity").append("<div class='list-group-item' calories='"+data+"'> <span class='glyphicon glyphicon-remove btn btn-danger remove-activity'></span>  " + activityType.text() +  "<span class='unit'> " + activityTime+ " mins </span></div>");
-            RemoveActivity()
 
+            $("<div class='list-group-item' calories='"+data+"'> <span class='glyphicon glyphicon-remove btn btn-danger remove-activity'></span>  " + activityType.text() +  "<span class='unit'> " + activityTime+ " mins </span></div>")
+                .insertBefore("#activity-calorie-sum");
             app.outtakeCalories+=data;
+            $("#activity-calorie-sum .activity-calories")[0].innerHTML=app.outtakeCalories;
+
+            RemoveActivity()
         });
         //close the modal
         $('#sportModal').modal('toggle');

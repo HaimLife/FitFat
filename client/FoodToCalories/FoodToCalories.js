@@ -19,7 +19,10 @@ $(document).ready(function() {
                 return entry.Key == "unit";
             }).Value
             var foodId = "food" + foodIndex;
-            $(".foodList").append("<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>  " + foodName + " <span class='foodUnit'>" + foodQuantity + " " + foodUnit + "</span></div>");
+
+            $("<div class='list-group-item' id='" + foodId + "'> <span class='glyphicon glyphicon-remove btn btn-danger removeFood'></span>" + foodName + " <span class='foodUnit'>  " + foodQuantity + " " + foodUnit + "</span></div>")
+                .insertBefore("#food-calorie-sum");
+
             foodIndex++;
             $(".removeFood").click(function(event) {
                 var food = event.target.parentElement;
@@ -81,6 +84,7 @@ $(document).ready(function() {
                 "data": data
             };
             foodList.push(food);
+            $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
             $("#foodModal").modal("toggle");
         });
     });
