@@ -102,6 +102,9 @@ body {
     font-family: digital-font;
     src: url("resources/alarm.ttf")
 }
+.current-data, .current-data *{
+    border: solid 1px whitesmoke;
+}
 
 @keyframes resize {
     /*230 474*/
