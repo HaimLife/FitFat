@@ -2,11 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <script src="jquery-3.1.1.min.js"></script>
+    <script src="jquery-3.1.1.min.js" defer></script>
     <link rel="stylesheet" href="fit-fat.css">
     <link rel="stylesheet" href="bootstrap-3.3.7-dist/css/bootstrap.min.css">
-    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
-    <script src="app.js"></script>
+    <link rel="stylesheet" href="node_modules/bootstrap-slider/dist/css/bootstrap-slider.min.css">
+    <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" defer></script>
+    <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.js" defer></script>
+    <script src="sliderTry.js" defer></script>
+    <script src="app.js" defer></script>
     <title>FitFat</title>
 </head>
 <body>
@@ -140,6 +143,7 @@
             <div class="list-group-item btn" data-toggle="modal" data-target="#sportModal"><span class="glyphicon glyphicon-plus"></span> </div>
         </div>
     </div>
+    <input id="ex1" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
 </div>
 </body>
 </html>
