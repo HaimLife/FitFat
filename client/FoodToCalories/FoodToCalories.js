@@ -82,6 +82,8 @@ $(document).ready(function() {
             };
             foodList.push(food);
             $("#foodModal").modal("toggle");
+        }).fail(function() {
+            $(".foodErrorMessage").show().delay(4000).fadeOut();
         });
     });
 
