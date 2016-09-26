@@ -14,7 +14,7 @@ $(document).ready(function() {
         e.preventDefault();
         var foodName = $(".foodName").val();
         var foodQuantity = $(".foodQuantity").val();
-        $.getJSON("http://localhost:1044/FoodToCalories.svc/GetCalories?food=" + foodName, function(data) {
+        $.getJSON("http://3e87e769.ngrok.io/FoodToCalories.svc/GetCalories?food=" + foodName, function(data) {
             var foodUnit = data.find(function(entry){
                 return entry.Key == "unit";
             }).Value
