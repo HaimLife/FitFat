@@ -4,11 +4,15 @@
 // With JQuery
 $('#lifeSlider').slider({
     formatter: function(value) {
-        return 'Current value: ' + value;
+        return 'יום: ' + value;
     }
 
 });
 $("#lifeSlider").on("slide", function(slideEvt) {
     app.daysInDiet = slideEvt.value;
+    //app.intakeCalories
+    //app.outtakeCalories\
+    app.
+    //app.fatPercentage
     updateWeight();
 });

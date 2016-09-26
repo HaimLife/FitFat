@@ -9,6 +9,8 @@
     <script src="bootstrap-3.3.7-dist/js/bootstrap.min.js" defer></script>
     <script src="node_modules/bootstrap-slider/dist/bootstrap-slider.js" defer></script>
     <script src="sliderTry.js" defer></script>
+    <script src="common/helpers/helper-methods.js"></script>
+    <script src="setup/setup.js" defer></script>
     <script src="app.js" defer></script>
     <script src="FoodToCalories/FoodToCalories.js" defer></script>
     <script src="ActivityToCalories/ActivityToCalories.js" defer></script>
@@ -114,11 +116,11 @@
                         </div>
                     </fieldset>
 
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <div id="submitMainForm" class="btn btn-primary">Submit</div>
                 </form>
             </div>
-            <div class="display">
-                <img src="resources/fats/m8.png">
+            <div class="display hide">
+                <img id="fatDudeImg" src="resources/fats/m8.png">
                 <div class="weight">
                     <img src="resources/weight.png">
                     <div class="data">
@@ -134,8 +136,8 @@
             </div>
         </div>
     </div>
-    <div class="well">
-        <input id="lifeSlider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="20" data-slider-step="1" data-slider-value="14"/>
+    <div class="well hide">
+    <input id="lifeSlider" data-slider-id='ex1Slider' type="text" data-slider-min="0" data-slider-max="365" data-slider-step="1" data-slider-value="0"/>
     </div>
 </div>
 </body>
