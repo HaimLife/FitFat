@@ -7,10 +7,11 @@ $(document).ready(function() {
 
     $(".openAddFood").click(function() {
         $(".foodName").val("");
-        $(".foodQuantity").val("");
+        $(".foodQuantity").val("1");
     });
 
-    $(".addFood").click(function() {
+    $("#food-form").submit(function(e) {
+        e.preventDefault();
         var foodName = $(".foodName").val();
         var foodQuantity = $(".foodQuantity").val();
         $.getJSON("http://localhost:1044/FoodToCalories.svc/GetCalories?food=" + foodName, function(data) {
