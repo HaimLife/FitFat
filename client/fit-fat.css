@@ -70,6 +70,7 @@ body{
     text-overflow: ellipsis;
 }
 
+
 @font-face {
     font-family: empty-font;
     src: url("resources/THIS_FONT_IS_EMPTY1.ttf")
