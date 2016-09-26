@@ -20,12 +20,23 @@ function SubmitActivityModal()
         var activityTime=$("#activity-time").val();
 
         $.getJSON(mainUrl+"GetBurnedCalories?id="+activityType.val()+"&trainingMinutes="+activityTime, function(data) {
-            $("#choosed-activity").append("<div class='list-group-item'> <span class='glyphicon glyphicon-remove btn'></span>" + activityType.text() + ": " + activityTime+ "</div>");
+            $("#choosed-activity").append("<div class='list-group-item' calories='"+data+"'> <span class='glyphicon glyphicon-remove btn remove-activity'></span>" + activityType.text() + ": " + activityTime+ "m</div>");
+            RemoveActivity()
 
             app.outtakeCalories+=data;
         });
-
+        //close the modal
         $('#sportModal').modal('toggle');
     })
+}
+
+function RemoveActivity()
+{
+    $(".remove-activity").click(function(event) {
+        var element=event.target.parentElement;
+        app.outtakeCalories-=element.getAttribute("calories");
+        element.remove();
+    });
+
 }
 
