@@ -55,6 +55,7 @@ $(document).ready(function() {
 
                 var foodIndexToBeRemoved = foodList.indexOf(foodToBeRemoved);
                 foodList.splice(foodIndexToBeRemoved, 1);
+                $("#food-calorie-sum .food-calories")[0].innerHTML=app.intake.calories;
                 food.remove();
             });
             app.intake.calories += (data.find(function(entry){
